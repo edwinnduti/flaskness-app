@@ -1,0 +1,55 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} Flaskness App {% endblock %}
+
+<!-- the navbar -->
+{% block navbar %}
+<div class="container">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	<a class="navbar-brand" href="#">Flask App</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/">Home</a>
+			</li>
+			<li class="nav-item active">
+                                <a class="nav-link" href="/">Services</a>
+                        </li>
+			<li class="nav-item active">
+                                <a class="nav-link" href="/">Contacts</a>
+                        </li>
+		</ul>
+	</div>
+</nav>
+</div>
+
+{% endblock %}
+
+
+<!--the body -->
+{% block content %}
+
+<div class="container">
+	{% for message in get_flashed_messages() %}
+
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		{{ message }}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+
+	{% endfor %}
+   {% block page_content %} {% endblock %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+
+{% endblock %}
+
