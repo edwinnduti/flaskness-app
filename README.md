@@ -8,7 +8,7 @@ pip3 install -r requirements.txt
 
 python hello.py runserver -p {port}
 
-p -> port(choose any suitable port.
+p -> port(choose any suitable port)
 ```
 
 Access the web app by [clicking here](https://flaskness.herokuapp.com)
